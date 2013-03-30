@@ -1,4 +1,6 @@
 JenkinsScripts
 ==============
 
-usefull scripts for jenkins CI server
+Usefull scripts for jenkins CI server
+
+mandatoryPluginsChecker - check if all mandatory plugins are installed
