@@ -1,6 +1,9 @@
 JenkinsScripts
 ==============
-
 Usefull scripts for jenkins CI server
 
-mandatoryPluginsChecker - check if all mandatory plugins are installed
+Before use please update [CHANGE] sections.
+
+mandatoryPluginsChecker.groovy - check if all mandatory plugins are installed
+disableAllJobsByNamePattern.groovy - disable all jobs by pattern name
+enabledAllJobsByNamePattern.groovy - enable all jobs by pattern name

@@ -12,35 +12,20 @@
 
 import hudson.model.*
 
-// [CHANGE: Define list of mandatory plugins]
-String[] pluginsToCheck = ["chucknorris", "mailer", "nunit", "mercurial"]
-
-for(plugin in pluginsToCheck)
+// [CHANGE: Set propper job name pattern]
+def regExp = ~/JobNames/
+  
+for(item in Hudson.instance.items)
 {
-  print("Checking plugin $plugin ... ")
-  if(!JenkinsUtils.pluginIsInstalled(plugin))
+  if(item.name =~ regExp)
   {
-    print("DON'T EXISTS")
-  }
-  else
-  {
-    print("exists");
-  }
-  println();
-}
-
-
-class JenkinsUtils
-{
-  static def plugins = jenkins.model.Jenkins.instance.getPluginManager().getPlugins()
-
-  static def pluginIsInstalled(name)
-  {
-    for(plugin in plugins)
+    if(item.disabled == false)
     {
-      if(plugin.getShortName() == name)
-        return true
+      println("Job $item.name already enabled")
+      continue
     }
-    return false
+    println("Enabling job $item.name")
+    item.disabled=false
+    item.save()
   }
 }
