@@ -9,6 +9,7 @@ Usefull scripts for [Jenkins CI server](http://jenkins-ci.org/) <br/>
 * enabledAllJobsByNamePattern.groovy - enable all jobs by pattern name
 * cleanupAllWorkspaces.groovy - wipeout workspace for all non-running jobs
 * mercurialMerge.groovy - look for merge in change set
+* projectSlaveRestriction.groovy - display nodes associated with projects
 
 #Troubleshooting
 Found a bug? Feed the [issue tracker](https://github.com/andrzejostrowski/JenkinsScripts/issues)
